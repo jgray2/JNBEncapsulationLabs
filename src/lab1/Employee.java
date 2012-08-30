@@ -11,15 +11,6 @@ import java.util.Date;
  * @version     1.01
  */
 public class Employee {
-//    String firstName;
-//    String lastName;
-//    public String ssn;
-//    public Date birthDate;
-//    boolean metWithHr;
-//    boolean metDeptStaff;
-//    boolean reviewedDeptPolicies;
-//    boolean movedIn;
-//    String cubeId;
     
     private String firstName;
     private String lastName;
@@ -40,6 +31,7 @@ public class Employee {
     }
 
     public void setFirstName(String firstName) {
+        //validate name
         this.firstName = firstName;
     }
 
@@ -48,6 +40,7 @@ public class Employee {
     }
 
     public void setLastName(String lastName) {
+        //validate name
         this.lastName = lastName;
     }
 
@@ -56,6 +49,7 @@ public class Employee {
     }
 
     public void setSsn(String ssn) {
+        //validate ssn
         this.ssn = ssn;
     }
 
@@ -64,6 +58,7 @@ public class Employee {
     }
 
     public void setBirthDate(Date birthDate) {
+        //validate birthdate
         this.birthDate = birthDate;
     }
 
@@ -77,15 +72,18 @@ public class Employee {
 
     // create method to encompass first day activities
     public void attendFirstDay() {
-        
+        meetWithHrForBenefitAndSalaryInfo();
+        meetDepartmentStaff();
+        reviewDeptPolicies();
+        moveIntoCubicle();
     }
     // Assume this must be performed first
-    public void meetWithHrForBenefitAndSalryInfo() {
+    private void meetWithHrForBenefitAndSalaryInfo() {
         metWithHr = true;
     }
 
     // Assume this is must be performed second
-    public void meetDepartmentStaff() {
+    private void meetDepartmentStaff() {
         if(metWithHr) {
             metDeptStaff = true;
         } else {
@@ -95,7 +93,7 @@ public class Employee {
     }
 
     // Assume this must be performed third
-    public void reviewDeptPolicies() {
+    private void reviewDeptPolicies() {
         if(metWithHr && metDeptStaff) {
             reviewedDeptPolicies = true;
         } else {
@@ -106,9 +104,9 @@ public class Employee {
     }
 
     // Assume this must be performed 4th
-    public void moveIntoCubicle(String cubeId) {
+    private void moveIntoCubicle() {
         if(metWithHr && metDeptStaff && reviewedDeptPolicies) {
-            this.cubeId = cubeId;
+            getCubeId();
             this.movedIn = true;
         } else {
             throw new IllegalStateException("Sorry, you cannot move in to a "
