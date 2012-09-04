@@ -10,6 +10,15 @@ package lab2;
  */
 public class Game {
     
+    GameBoard gameBoard = new GameBoard();
+    GameCharacter character1 = new GameCharacter();
+    
+    public void playGame() {
+        gameBoard.createGameBoard();
+        character1.createCharacter("Mario");
+    }
+    
+    
     
     
 }

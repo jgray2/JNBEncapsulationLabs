@@ -38,5 +38,12 @@ public class GameBoard {
         this.space = space;
     }
     
-    
+    public void createGameBoard(){
+        this.setStart(start);
+        this.setSpace(space);
+        this.setEnd(end);
+        this.isStart();
+        this.getSpace();
+        this.isEnd();
+    }
 }

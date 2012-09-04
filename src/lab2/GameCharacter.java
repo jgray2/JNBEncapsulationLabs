@@ -37,6 +37,14 @@ public class GameCharacter {
         this.name = name;
     }
     
-    
+    public void createCharacter(String name){
+        this.setName(name);
+        this.setTurn(turn);
+        this.setAlive(alive);
+        this.getName();
+        this.isTurn();
+        this.isAlive();
+        
+    }
     
 }
